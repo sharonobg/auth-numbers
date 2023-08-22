@@ -12,7 +12,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  //const [isLoggedIn,setIsLoggedIn] = useState(false);
+  const [isLoggedIn,setIsLoggedIn] = useState(false);
   
   return (
     <>
@@ -20,8 +20,7 @@ export default function RootLayout({
       
       
       <body><Header />
-      {/*{!isLoggedIn ? <Landing /> : children}*/}
-      <Landing />
+      {!isLoggedIn ? <Landing /> : children}
       </body>
       
       

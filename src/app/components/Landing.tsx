@@ -19,9 +19,6 @@ export default function Landing(){
             let { data, error } = await supabase.auth.signInWithOtp({
               email
             })
-            /*let { data, error } = await supabase.auth.signInWithOtp({
-                email:{email}
-              })*/
         } catch(error) {
             console.log(error);
         } finally {
@@ -30,11 +27,11 @@ export default function Landing(){
         }
     }
     return(
-        <div className="flex flex-col content-center">
+        <div className="flex flex-col items-center">
             <h1 className=" text-blue-600 text-6xl mt-4">Another numbers app!</h1>
-            <div className="container flex content-center text-center content-">
-            <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-    <div className="mb-4">
+            <div className="container  flex flex-col items-center text-center">
+            <form className="shadow-lg rounded px-8 pt-6 pb-8 mt-5 mb-4">
+    <div className="mb-4 mt-5 flex flex-col gap-3">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
         Email
       </label>
