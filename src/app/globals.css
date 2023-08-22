@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 body{
   background:linear-gradient(45deg, white ,white,blue 20%, white 10%,white);
   height: 100vh;
