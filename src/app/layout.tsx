@@ -1,5 +1,5 @@
 import Nav from './components/Nav';
-import { AuthContextProvider } from "./context";
+//import { AuthContextProvider } from "./context";
 import './globals.css';
 export default function RootLayout({
   children,
