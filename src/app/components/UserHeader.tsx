@@ -4,9 +4,9 @@ import * as React from 'react';
 
 export default function UserHeader() {
     return(
-        <div className="flex justify-center flex-col text-center mt-5">
-            <div>User Name</div>
-            <button>Edit Profile</button>
+        <div className="flex justify-end mt-5 p-8">
+            <div className="flex align-middle">User Name</div>
+            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit Profile</button>
         </div>
     )
 

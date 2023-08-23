@@ -6,7 +6,7 @@ import './globals.css'
 
 export default function Home() {
   return (
-    <div className="flex justify-center flex-col text-center">
+    <div className="flex justify-center flex-col text-center object-none">
       <h1 className="text-blue-600 text-6xl mt-4">Your Numbers App!</h1>
       <div className="flex flex-col justify-center text-center">
         <UserHeader />
