@@ -4,6 +4,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import {supabase} from '@/app/utils/supabase';
 import Image from 'next/image';
+import Nav from './Nav';
 import '../globals.css';
 
 
@@ -27,6 +28,8 @@ export default function Landing(){
         }
     }
     return(
+      <>
+      <Nav />
         <div className="flex flex-col items-center">
             <h1 className=" text-blue-600 text-6xl mt-4">Another numbers app!</h1>
             <div className="container  flex flex-col items-center text-center">
@@ -44,7 +47,7 @@ export default function Landing(){
         
       </div>
         </div>
-        
+        </>
 
     )
 

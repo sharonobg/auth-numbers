@@ -1,7 +1,9 @@
 "use client"
 
-import {createContext, useContext ,useEffect,useState} from "react";
+import {createContext, useContext ,useEffect,useState,useMemo} from "react";
 import supabase from '@/app/utils/supabase';
+import Header from '@/app/components/Header';
+import Landing from '@/app/components/Landing';
 
 const AuthContext = createContext({});
 export const AuthContextProvider = ({children}) => {
@@ -11,7 +13,9 @@ export const AuthContextProvider = ({children}) => {
           const {
             data: { user },
           }= await supabase.auth.getUser();
-          console.log(user)
+          if (user) {
+            setUser(user);
+          }
         } catch (error) {
           console.log(error)
         } finally {
@@ -20,9 +24,21 @@ export const AuthContextProvider = ({children}) => {
         useEffect( () => {
             onAuthStateChange();
           },[]);
-
+          const value = useMemo( () => {
+            return {
+                user,
+                signOut: () => supabase.auth.signOut(),
+            };
+          },[user]);
           return (
-          <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+            <AuthContext.Provider value={value}>
+                <Header />
+                {user ? children: <Landing />}
+            </AuthContext.Provider>
           )
       };
+}
+export const useAuthContect = () => {
+    const {user, signOut} = useContext(AuthContext);
+    return {user,signOut};
 }
