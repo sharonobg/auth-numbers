@@ -8,3 +8,50 @@ body{
   background:linear-gradient(45deg, white ,white,blue 20%, white 10%,white);
   height: 100vh;
 }
+input,button{margin: 5px;}
+button {display:flex;border: 2px solid blue;border-radius:8px;padding: 5px 8px;}
+
+input {display:flex;
+  border: 1px solid blue;
+  
+}
+h1 {
+  font-size: x-large;
+  text-align: center;
+}
+main{padding:30px;}
+ul{margin:25px;border:1px solid blue;padding:45px 0 10px;}
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+}
+
+li>span {
+  width: 15%;
+  margin: 0;
+  flex-direction: row;
+  border:1px solid violet;
+  border-collapse:collapse;
+  text-align:center;
+}
+nav {
+  background: blueviolet;
+  padding: 10px 30px;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  text-decoration: none;
+  align-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 10px 30px;
+  border: none;
+}
+nav ul a {
+  text-decoration: none;
+  color: #fff;
+  font-weight:700;
