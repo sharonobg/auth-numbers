@@ -13,7 +13,6 @@ button {display:flex;border: 2px solid blue;border-radius:8px;padding: 5px 8px;}
 
 input {display:flex;
   border: 1px solid blue;
-  
 }
 h1 {
   font-size: x-large;
@@ -27,7 +26,6 @@ li {
   justify-content:center;
   align-items:center;
 }
-
 li>span {
   width: 15%;
   margin: 0;
@@ -55,3 +53,4 @@ nav ul a {
   text-decoration: none;
   color: #fff;
   font-weight:700;
+  }
