@@ -8,7 +8,7 @@ import Nav from './Nav';
 import '../globals.css';
 
 
-export default function Landing(){
+export default function OldLanding(){
     const [email,setEmail] = useState('');
     const [loading,setLoading] = useState(false);
     const [success,setSuccess] = useState(false);
@@ -36,7 +36,7 @@ export default function Landing(){
             <form className="shadow-lg rounded px-8 pt-6 pb-8 mt-5 mb-4">
     <div className="mb-4 mt-5 flex flex-col gap-3">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-        Email
+        Landing Email
       </label>
       <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="example@example.com" onChange={e => setEmail(e.target.value)} />
       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={login}>

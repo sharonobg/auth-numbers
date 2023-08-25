@@ -49,8 +49,21 @@ nav ul {
   margin: 10px 30px;
   border: none;
 }
-nav ul a {
+nav ul a, nav p {
   text-decoration: none;
   color: #fff;
   font-weight:700;
   }
+  .circle {
+  padding: 2rem;
+  background: blue;
+  color: white;
+  font-weight: bold;
+  width: 6rem;
+  border-radius: 3rem;
+  text-align: center;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-content: end;
+}
