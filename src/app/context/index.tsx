@@ -1,15 +1,12 @@
 "use client"
 
 import {createContext, useContext ,useEffect,useState,useMemo} from "react";
+import Nav from '@/app/components/Nav';
 import supabase from '@/app/utils/supabase';
 import Header from '@/app/components/Header';
 import Landing from '@/app/landing/page';
-import getCategories from '@/app/categories/page';
-interface UserData {
-    user ?: string|null;
-    prevState: null;
-    email?: null | string;
-  }
+
+
   interface AuthContextType {
     user?: {}|false;
     signOut: () => void;
@@ -24,6 +21,10 @@ export const AuthContextProvider = ({children}:{children:any}) => {
       } catch(error) {
           console.log(error);
       } finally {
+        if (user) {
+          setUser(user);
+          console.log(user)
+        }
       }
 }
     const onAuthStateChange = async () => {
@@ -52,6 +53,7 @@ const value = useMemo( () => {
           },[user]);
       return (
             <AuthContext.Provider value={value}>
+              <Nav />
               <Header user={user} />
                 {!user ? <Landing /> : children }
             </AuthContext.Provider>

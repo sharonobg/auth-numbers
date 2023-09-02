@@ -1,6 +1,7 @@
 import supabase from '@/app/utils/supabase';
-//import Categories from '@/app/components/Categories';
+
 export const revalidate = 0;
+
 export default async function getCategories() {
  
     const { data: categories,error } = await supabase

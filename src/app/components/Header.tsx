@@ -12,14 +12,19 @@ export default function Header({user}: {user:any}) {
     }
     const getFirstLetter = () => {
         if(!user) return 'A'
-        return user.email 
+        return user.email[0]
     }
     return(
         <>
-        <div className="flex flex-row justify-end">
+        {user && (
+            <div>
+                <div className="flex flex-row justify-end">
             <p className="flex flex-col font-semibold m-5">{user.email}</p>
             <p className="circle capitalize">{getFirstLetter()}</p>
         </div>
+            </div>
+        )}
+        
         </>
     )
 }
