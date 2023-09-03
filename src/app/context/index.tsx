@@ -1,6 +1,7 @@
 "use client"
 
 import {createContext, useContext ,useEffect,useState,useMemo} from "react";
+import { User } from '@supabase/supabase-js';
 import Nav from '@/app/components/Nav';
 import supabase from '@/app/utils/supabase';
 import Header from '@/app/components/Header';
@@ -14,17 +15,13 @@ import Landing from '@/app/landing/page';
 const AuthContext = createContext({});
 
 export const AuthContextProvider = ({children}:{children:any}) => {
-  const [user,setUser] = useState(false);
+  const [user,setUser] = useState<User | null>(null);
   const getUserObj = async () => {
       try {
           const { data: { user } } = await supabase.auth.getUser()
       } catch(error) {
           console.log(error);
       } finally {
-        if (user) {
-          setUser(user);
-          console.log(user)
-        }
       }
 }
     const onAuthStateChange = async () => {

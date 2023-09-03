@@ -9,7 +9,7 @@ export default function Nav(){
     const { user,signOut } = useAuthContext();
     const getlogininfo = ({user}:any) => {
         const email = () => {
-            if(!user) return 'email'
+            if(!user) return email
             console.log(user.email)
             return user.email
         }
@@ -37,7 +37,7 @@ export default function Nav(){
             </ul>
             {user && (
             <div className="login-user">
-                <span>{ user?.email}</span>
+                <span>email</span>
                 <button onClick={logout} className="toggl">SignOut</button>
             </div>)}
             
